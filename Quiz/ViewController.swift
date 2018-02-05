@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton1: UIButton!
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
+    @IBOutlet var newGameButton: UIButton!
     
     var session : QuizSession!
 
@@ -33,12 +34,24 @@ class ViewController: UIViewController {
     
     @IBAction func answerClick(_ sender: UIButton) {
         // Tell the session the chosen answer
-        session.checkAnswer(sender.currentTitle!)
+        if session.checkAnswer(sender.currentTitle!) {
+            session.increaseScore()
+        }
         
         // Pass to the next question
         nextOne()
     }
 
+    @IBAction func newGameClick(_ sender: UIButton) {
+        session = QuizSession()
+        nextOne()
+        
+        answerButton1.isHidden = false
+        answerButton2.isHidden = false
+        answerButton3.isHidden = false
+        newGameButton.isHidden = true
+    }
+    
     func nextOne() {
         // get the next question from the session
         if let question = session.nextQuestion() {
@@ -54,7 +67,10 @@ class ViewController: UIViewController {
             answerButton2.isHidden = true
             answerButton3.isHidden = true
             
-            questionLabel.text = "GAME OVER"
+            // show new game button
+            newGameButton.isHidden = false
+            
+            questionLabel.text = "You scored : \(session.getScore()) out of \(session.getNumberQuestion()) questions"
         }
     }
     
