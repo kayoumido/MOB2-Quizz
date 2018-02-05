@@ -34,9 +34,7 @@ class ViewController: UIViewController {
     
     @IBAction func answerClick(_ sender: UIButton) {
         // Tell the session the chosen answer
-        if session.checkAnswer(sender.currentTitle!) {
-            session.increaseScore()
-        }
+        session.checkAnswer(sender.currentTitle!)
         
         // Pass to the next question
         nextOne()
@@ -70,7 +68,7 @@ class ViewController: UIViewController {
             // show new game button
             newGameButton.isHidden = false
             
-            questionLabel.text = "You scored : \(session.getScore()) out of \(session.getNumberQuestion()) questions"
+            questionLabel.text = "You scored : \(session.score) out of \(session.questionCount) questions"
         }
     }
     
