@@ -65,6 +65,10 @@ class ViewController: UIViewController {
             answerButton2.isHidden = true
             answerButton3.isHidden = true
             
+            answerButton1.setTitle("", for: UIControlState())
+            answerButton2.setTitle("", for: UIControlState())
+            answerButton3.setTitle("", for: UIControlState())
+            
             // show new game button
             newGameButton.isHidden = false
             
