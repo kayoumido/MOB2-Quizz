@@ -21,59 +21,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quZ-KZ-J14">
-                                <rect key="frame" x="58" y="52" width="484" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZb-n6-4MQ">
-                                <rect key="frame" x="45" y="291" width="284" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pJ-ek-ggZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZj-Gn-uLM">
-                                <rect key="frame" x="40" y="197" width="295" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M75-Xj-hsV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-1b-7cm">
-                                <rect key="frame" x="33" y="376" width="308" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plA-69-T2L"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-Vs-mgR">
-                                <rect key="frame" x="141" y="519" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="New Game"/>
-                                <connections>
-                                    <action selector="newGameClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qKO-I6-yG1"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="uiP-py-i34">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XCx-Vd-Ey4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quZ-KZ-J14">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="SYH-d9-R04">
+                                        <rect key="frame" x="0.0" y="105" width="375" height="242.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZj-Gn-uLM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M75-Xj-hsV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZb-n6-4MQ">
+                                                <rect key="frame" x="0.0" y="81" width="375" height="80.5"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pJ-ek-ggZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-1b-7cm">
+                                                <rect key="frame" x="0.0" y="161.5" width="375" height="81"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="answerClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plA-69-T2L"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vuM-kE-eGY">
+                                        <rect key="frame" x="0.0" y="397.5" width="375" height="249.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaL-jU-o5C">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                                <state key="normal" title="New game"/>
+                                                <connections>
+                                                    <action selector="newGameClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="64q-Wl-RA4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uiP-py-i34" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gtb-gk-1RY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uiP-py-i34" secondAttribute="bottom" id="Int-JE-tyr"/>
+                            <constraint firstAttribute="trailing" secondItem="uiP-py-i34" secondAttribute="trailing" id="Xqu-8C-vjz"/>
+                            <constraint firstItem="uiP-py-i34" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pxd-wU-Y3a"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="answerButton1" destination="UZj-Gn-uLM" id="49r-Mo-Bsi"/>
                         <outlet property="answerButton2" destination="mZb-n6-4MQ" id="6PU-ck-Adw"/>
                         <outlet property="answerButton3" destination="6Vy-1b-7cm" id="zDP-9n-ka9"/>
-                        <outlet property="newGameButton" destination="ozh-Vs-mgR" id="wJk-zI-u7G"/>
+                        <outlet property="buttonStackView" destination="SYH-d9-R04" id="dNb-yO-nbu"/>
+                        <outlet property="newGameButton" destination="JaL-jU-o5C" id="tSa-KZ-2se"/>
+                        <outlet property="newGameButtonStackView" destination="vuM-kE-eGY" id="6CU-fR-zFt"/>
                         <outlet property="questionLabel" destination="quZ-KZ-J14" id="XV3-vE-LIj"/>
                     </connections>
                 </viewController>

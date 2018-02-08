@@ -15,13 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
     @IBOutlet var newGameButton: UIButton!
+    @IBOutlet var buttonStackView: UIStackView!
+    @IBOutlet var newGameButtonStackView: UIStackView!
     
     var session : QuizSession!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.newGameButtonStackView.isHidden = true
         // Create our game session, and get the first question
         session = QuizSession()
         nextOne()
@@ -44,10 +46,8 @@ class ViewController: UIViewController {
         session = QuizSession()
         nextOne()
         
-        answerButton1.isHidden = false
-        answerButton2.isHidden = false
-        answerButton3.isHidden = false
-        newGameButton.isHidden = true
+        buttonStackView.isHidden = false
+        newGameButtonStackView.isHidden = true
     }
     
     func nextOne() {
@@ -61,16 +61,14 @@ class ViewController: UIViewController {
         }
         else {
             // No more questions! This is the end
-            answerButton1.isHidden = true
-            answerButton2.isHidden = true
-            answerButton3.isHidden = true
+            buttonStackView.isHidden = true
             
             answerButton1.setTitle("", for: UIControlState())
             answerButton2.setTitle("", for: UIControlState())
             answerButton3.setTitle("", for: UIControlState())
             
             // show new game button
-            newGameButton.isHidden = false
+            newGameButtonStackView.isHidden = false
             
             questionLabel.text = "You scored : \(session.score) out of \(session.questionCount) questions"
         }
