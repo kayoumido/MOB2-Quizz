@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var newGameButton: UIButton!
     @IBOutlet var buttonStackView: UIStackView!
     @IBOutlet var newGameButtonStackView: UIStackView!
+    @IBOutlet var hintButton: UIButton!
     
     var session : QuizSession!
 
@@ -25,8 +26,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.newGameButtonStackView.isHidden = true
         // Create our game session, and get the first question
-        session = QuizSession()
-        nextOne()
+        self.session = QuizSession()
+        self.nextOne()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,41 +37,60 @@ class ViewController: UIViewController {
     
     @IBAction func answerClick(_ sender: UIButton) {
         // Tell the session the chosen answer
-        session.checkAnswer(sender.currentTitle!)
+        self.session.checkAnswer(sender.currentTitle!)
         
         // Pass to the next question
-        nextOne()
+        self.nextOne()
     }
 
     @IBAction func newGameClick(_ sender: UIButton) {
-        session = QuizSession()
-        nextOne()
+        self.session = QuizSession()
+        self.nextOne()
         
-        buttonStackView.isHidden = false
-        newGameButtonStackView.isHidden = true
+        self.buttonStackView.isHidden = false
+        self.hintButton.isHidden = false
+        self.newGameButtonStackView.isHidden = true
+    }
+    
+    @IBAction func displayHintClick(_ sender: Any) {
+        let currentQuestion = self.session.currentQuestion()
+        
+        if (currentQuestion != nil) {
+            self.hintButton.setTitle(currentQuestion?.hint, for: .normal)
+        }
+        
+    }
+    
+    func resetHint() {
+        self.hintButton.setTitle("?", for: .normal)
     }
     
     func nextOne() {
+        
+        // reset hint button
+        self.resetHint()
+        
         // get the next question from the session
         if let question = session.nextQuestion() {
             // Set the captions
-            questionLabel.text = question.caption
-            answerButton1.setTitle(question.answers[0], for: UIControlState())
-            answerButton2.setTitle(question.answers[1], for: UIControlState())
-            answerButton3.setTitle(question.answers[2], for: UIControlState())
+            self.questionLabel.text = question.caption
+            self.answerButton1.setTitle(question.answers[0], for: UIControlState())
+            self.answerButton2.setTitle(question.answers[1], for: UIControlState())
+            self.answerButton3.setTitle(question.answers[2], for: UIControlState())
         }
         else {
             // No more questions! This is the end
-            buttonStackView.isHidden = true
+            self.buttonStackView.isHidden = true
+            self.hintButton.isHidden = true
             
-            answerButton1.setTitle("", for: UIControlState())
-            answerButton2.setTitle("", for: UIControlState())
-            answerButton3.setTitle("", for: UIControlState())
+            self.answerButton1.setTitle("", for: UIControlState())
+            self.answerButton2.setTitle("", for: UIControlState())
+            self.answerButton3.setTitle("", for: UIControlState())
             
             // show new game button
-            newGameButtonStackView.isHidden = false
+            self.newGameButtonStackView.isHidden = false
             
-            questionLabel.text = "You scored : \(session.score) out of \(session.questionCount) questions"
+            self.questionLabel.text = "You scored : \(session.score) out of \(session.questionCount) questions"
         }
     }
     
