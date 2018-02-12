@@ -26,6 +26,12 @@ class QuizSession {
         }
     }
     
+    var currentQuestion: Question {
+        get {
+            return self.questions[currentIndex]
+        }
+    }
+    
     init() {
         questions = [
             Question(
@@ -50,10 +56,6 @@ class QuizSession {
         
         currentIndex = -1
         _score = 0
-    }
-    
-    func currentQuestion() -> Question? {
-        return questions[currentIndex]
     }
     
     func nextQuestion() -> Question? {

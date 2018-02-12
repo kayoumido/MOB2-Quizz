@@ -53,12 +53,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func displayHintClick(_ sender: Any) {
-        let currentQuestion = self.session.currentQuestion()
-        
-        if (currentQuestion != nil) {
-            self.hintButton.setTitle(currentQuestion?.hint, for: .normal)
-        }
-        
+
+        self.hintButton.setTitle(self.session.currentQuestion.hint, for: .normal)
     }
     
     func resetHint() {
