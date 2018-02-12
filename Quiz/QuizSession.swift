@@ -32,7 +32,7 @@ class QuizSession {
                 caption: "2+2",
                 answers: ["1", "2", "4"],
                 correctAnswer: "4",
-                hint: "A toddler could answer this questions...."
+                hint: "A toddler could answer these questions...."
             ),
             Question(
                 caption: "Meaning of life?",
@@ -50,6 +50,10 @@ class QuizSession {
         
         currentIndex = -1
         _score = 0
+    }
+    
+    func currentQuestion() -> Question? {
+        return questions[currentIndex]
     }
     
     func nextQuestion() -> Question? {
