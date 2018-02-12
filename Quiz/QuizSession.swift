@@ -31,15 +31,21 @@ class QuizSession {
             Question(
                 caption: "2+2",
                 answers: ["1", "2", "4"],
-                correctAnswer: "4"),
+                correctAnswer: "4",
+                hint: "A toddler could answer this questions...."
+            ),
             Question(
                 caption: "Meaning of life?",
                 answers: ["God", "42", "Me"],
-                correctAnswer: "42"),
+                correctAnswer: "42",
+                hint: "Is there really a meaning to life ?"
+            ),
             Question(
                 caption: "May the Force be with you",
                 answers: ["Star wars", "Forest Gump", "American pie"],
-                correctAnswer: "Star wars")
+                correctAnswer: "Star wars",
+                hint: "You for real ?"
+            )
         ]
         
         currentIndex = -1
