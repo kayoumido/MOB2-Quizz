@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.newGameButtonStackView.isHidden = true
         // Create our game session, and get the first question
-        self.session = QuizSession()
+        self.initSession()
         self.nextOne()
     }
 
@@ -44,8 +44,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func newGameClick(_ sender: UIButton) {
-        self.session = QuizSession()
-        self.nextOne()
+        self.initSession()
         
         self.buttonStackView.isHidden = false
         self.hintButton.isHidden = false
@@ -54,7 +53,12 @@ class ViewController: UIViewController {
     
     @IBAction func displayHintClick(_ sender: Any) {
 
-        self.hintButton.setTitle(self.session.currentQuestion.hint, for: .normal)
+        self.hintButton.setTitle(self.session.currentQuestion!.hint, for: .normal)
+    }
+    
+    func initSession() {
+        self.session = QuizSession(LocalQuestionRepository(), 5)
+        self.nextOne()
     }
     
     func resetHint() {
