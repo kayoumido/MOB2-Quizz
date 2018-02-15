@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A96EB14B1E66F70800F48F53 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EB14A1E66F70800F48F53 /* QuizSession.swift */; };
+		C5E8CF2720359DFE006F2258 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8CF2620359DFE006F2258 /* QuestionRepository.swift */; };
+		C5E8CF2920359E94006F2258 /* LocalQuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8CF2820359E94006F2258 /* LocalQuestionRepository.swift */; };
+		C5E8CF2B20359EFA006F2258 /* RestQuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8CF2A20359EFA006F2258 /* RestQuestionRepository.swift */; };
 		CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCECE1C74A5C800133338 /* AppDelegate.swift */; };
 		CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCED01C74A5C800133338 /* ViewController.swift */; };
 		CF4FCED41C74A5C800133338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4FCED21C74A5C800133338 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		A96EB14A1E66F70800F48F53 /* QuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
+		C5E8CF2620359DFE006F2258 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
+		C5E8CF2820359E94006F2258 /* LocalQuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuestionRepository.swift; sourceTree = "<group>"; };
+		C5E8CF2A20359EFA006F2258 /* RestQuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestQuestionRepository.swift; sourceTree = "<group>"; };
 		CF4FCEC91C74A5C800133338 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4FCECD1C74A5C800133338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4FCECE1C74A5C800133338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,9 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,
+				CF4FCED01C74A5C800133338 /* ViewController.swift */,
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
 				A96EB14A1E66F70800F48F53 /* QuizSession.swift */,
-				CF4FCED01C74A5C800133338 /* ViewController.swift */,
+				C5E8CF2620359DFE006F2258 /* QuestionRepository.swift */,
+				C5E8CF2820359E94006F2258 /* LocalQuestionRepository.swift */,
+				C5E8CF2A20359EFA006F2258 /* RestQuestionRepository.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
 				CF4FCED21C74A5C800133338 /* Main.storyboard */,
@@ -202,8 +211,11 @@
 			files = (
 				CF4FCEF11C74A6B200133338 /* Question.swift in Sources */,
 				A96EB14B1E66F70800F48F53 /* QuizSession.swift in Sources */,
+				C5E8CF2B20359EFA006F2258 /* RestQuestionRepository.swift in Sources */,
 				CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */,
+				C5E8CF2720359DFE006F2258 /* QuestionRepository.swift in Sources */,
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
+				C5E8CF2920359E94006F2258 /* LocalQuestionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
