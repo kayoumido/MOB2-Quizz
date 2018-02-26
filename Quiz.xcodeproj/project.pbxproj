@@ -65,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C52FA11B20441806004F00A0 /* QuizSession */ = {
+			isa = PBXGroup;
+			children = (
+				A96EB14C1E67014600F48F53 /* QuizSession.swift */,
+				A9FBA1961E81191C007DCBF2 /* RookieQuizSession.swift */,
+			);
+			path = QuizSession;
+			sourceTree = "<group>";
+		};
+		C52FA11C2044181D004F00A0 /* QuestionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */,
+				A9FBA19B1E811A6D007DCBF2 /* RemoteQuestionRepository.swift */,
+				A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */,
+			);
+			path = QuestionRepository;
+			sourceTree = "<group>";
+		};
 		CF4FCEC01C74A5C800133338 = {
 			isa = PBXGroup;
 			children = (
@@ -85,13 +104,10 @@
 		CF4FCECB1C74A5C800133338 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				C52FA11C2044181D004F00A0 /* QuestionRepository */,
+				C52FA11B20441806004F00A0 /* QuizSession */,
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
-				A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */,
-				A96EB14C1E67014600F48F53 /* QuizSession.swift */,
-				A9FBA19B1E811A6D007DCBF2 /* RemoteQuestionRepository.swift */,
-				A9FBA1961E81191C007DCBF2 /* RookieQuizSession.swift */,
-				A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */,
 				CF4FCED01C74A5C800133338 /* ViewController.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
