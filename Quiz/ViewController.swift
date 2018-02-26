@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton1: UIButton!
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
+    @IBOutlet var newGameButton: UIButton!
     
     var session : QuizSession!
 
@@ -23,9 +24,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // hide new gae button
+        self.newGameButton.isHidden = true
+        
         // Create our game session, and get the first question
-        session = RookieQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
-        nextOne()
+        self.newSession()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +44,34 @@ class ViewController: UIViewController {
         nextOne()
     }
 
+    @IBAction func NewGameClick(_ sender: Any) {
+        
+        // reset buttons and labels for new game
+        self.answerButton1.isHidden = false
+        self.answerButton2.isHidden = false
+        self.answerButton3.isHidden = false
+        self.hintLabel.isHidden = false
+        self.hintButton.isHidden = false
+        self.questionLabel.text = ""
+        self.newGameButton.isHidden = true
+        
+        self.newSession()
+    }
+    
+    @IBAction func hintClick(_ sender: UIButton) {
+        hintLabel.isHidden = false
+        hintButton.isHidden = true
+    }
+    
+    func newSession() {
+        self.session = RookieQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        self.nextOne()
+    }
+    
     func nextOne() {
         hintLabel.isHidden = true
         hintButton.isHidden = false
-
+        
         // get the next question from the session
         if let question = session.nextQuestion() {
             // Set the captions
@@ -61,15 +88,10 @@ class ViewController: UIViewController {
             answerButton3.isHidden = true
             hintLabel.isHidden = true
             hintButton.isHidden = true
+            self.newGameButton.isHidden = false
             
             questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
         }
     }
-    
-    @IBAction func hintClick(_ sender: UIButton) {
-        hintLabel.isHidden = false
-        hintButton.isHidden = true
-    }
-    
 }
 
