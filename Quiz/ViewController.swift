@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     }
     
     func newSession() {
-        self.session = RookieQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        self.session = JourneymanQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
         self.nextOne()
     }
     
