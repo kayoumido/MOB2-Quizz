@@ -9,9 +9,9 @@
 import Foundation
 
 class Question {
-    let caption: String
-    let answers: [String]
-    let hint: String
+    let caption: String!
+    let answers: [String]!
+    let hint: String!
     
     fileprivate var correctAnswer: String
     
