@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     @IBOutlet var hintButton: UIButton!
     @IBOutlet var hintLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var timerLabel: UILabel!
     @IBOutlet var answerButton1: UIButton!
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
     @IBOutlet var newGameButton: UIButton!
     
     var session : QuizSession!
+    var timer = Timer()
+    var time = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +67,8 @@ class ViewController: UIViewController {
     }
     
     func newSession() {
-        self.session = JourneymanQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        self.session = WarriorQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        self.runTimer()
         self.nextOne()
     }
     
@@ -82,16 +86,51 @@ class ViewController: UIViewController {
             answerButton3.setTitle(question.answers[2], for: UIControlState())
         }
         else {
-            // No more questions! This is the end
-            answerButton1.isHidden = true
-            answerButton2.isHidden = true
-            answerButton3.isHidden = true
-            hintLabel.isHidden = true
-            hintButton.isHidden = true
-            self.newGameButton.isHidden = false
-            
-            questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
+            endGame()
         }
+    }
+    
+    func runTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        self.time = self.session.time
+        
+        // check if session has a timer
+        if (self.time > 0) {
+            // yes, display label
+            self.timerLabel.isHidden = false
+            self.timerLabel.text = "\(self.timeString(time: TimeInterval(self.time)))"
+        }
+    }
+    
+    func updateTimer() {
+        self.time -= 1
+        
+        if (self.time < 0 && self.session.time != 0) {
+            endGame()
+        }
+        
+        self.timerLabel.text = "\(self.timeString(time: TimeInterval(self.time)))"
+    }
+    
+    func timeString(time: TimeInterval) -> String {
+        let seconds = Int(time) % 60
+        
+        return String(format:"%02i", seconds)
+    }
+    
+    func endGame() {
+        self.timer.invalidate()
+        
+        // No more questions! This is the end
+        answerButton1.isHidden = true
+        answerButton2.isHidden = true
+        answerButton3.isHidden = true
+        hintLabel.isHidden = true
+        hintButton.isHidden = true
+        self.newGameButton.isHidden = false
+        self.timerLabel.isHidden = true
+        
+        questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
     }
 }
 

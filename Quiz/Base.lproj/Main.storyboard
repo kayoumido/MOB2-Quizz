@@ -91,6 +91,12 @@
                                             <action selector="NewGameClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MM9-Te-fdF"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDF-D7-yKw">
+                                        <rect key="frame" x="-8812.5" y="380" width="18000" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="quZ-KZ-J14" firstAttribute="width" secondItem="J9x-TN-11j" secondAttribute="width" id="7Wu-Ec-dhx"/>
@@ -115,6 +121,7 @@
                         <outlet property="hintLabel" destination="BZk-xo-iUA" id="12U-V4-GVT"/>
                         <outlet property="newGameButton" destination="Pdo-0W-C2Y" id="dpB-zR-4VF"/>
                         <outlet property="questionLabel" destination="quZ-KZ-J14" id="XV3-vE-LIj"/>
+                        <outlet property="timerLabel" destination="LDF-D7-yKw" id="NOY-My-1lP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
