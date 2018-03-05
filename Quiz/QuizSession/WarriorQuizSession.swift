@@ -17,7 +17,8 @@ class WarriorQuizSession : QuizSession {
         self._currentQuestionCount = 1
         self._wasLastQuestionCorrect = true
         
-        super.init(questionRepository: questionRepository, totalQuestionCount: 15, time: 30)
+        super.init(questionRepository: questionRepository, totalQuestionCount: 15)
+        _time = 30
     }
     
     override func nextQuestion() -> Question? {
