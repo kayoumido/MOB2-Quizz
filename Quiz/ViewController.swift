@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var session : QuizSession!
     var timer = Timer()
     var time = 0
+    var questionTime = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,7 @@ class ViewController: UIViewController {
     func runTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
         self.time = self.session.time
+        self.questionTime = self.session.questionTime
         
         // check if session has a timer
         if (self.time > 0) {
@@ -104,9 +106,14 @@ class ViewController: UIViewController {
     
     func updateTimer() {
         self.time -= 1
-        
+        self.questionTime -= 1
         if (self.time < 0 && self.session.time != 0) {
             endGame()
+        }
+        
+        if (self.questionTime == 0) {
+            nextOne()
+            self.questionTime = self.session.questionTime
         }
         
         self.timerLabel.text = "\(self.timeString(time: TimeInterval(self.time)))"
