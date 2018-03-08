@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  Quiz
 //
 //  Created by Pascal Hurni on 17.02.16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     @IBOutlet var hintButton: UIButton!
     @IBOutlet var hintLabel: UILabel!
@@ -68,7 +68,6 @@ class ViewController: UIViewController {
     }
     
     func newSession() {
-        self.session = WarriorQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
         self.runTimer()
         self.nextOne()
     }
@@ -92,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     func runTimer() {
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(GameViewController.updateTimer)), userInfo: nil, repeats: true)
         self.time = self.session.time
         self.questionTime = self.session.questionTime
         
