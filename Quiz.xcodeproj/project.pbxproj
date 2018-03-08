@@ -15,8 +15,10 @@
 		C52FA11E20441BAB004F00A0 /* JourneymanQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FA11D20441BAB004F00A0 /* JourneymanQuizSession.swift */; };
 		C52FA12020441EC9004F00A0 /* WarriorQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FA11F20441EC9004F00A0 /* WarriorQuizSession.swift */; };
 		C54A2A01204813E900217F6D /* NinjaQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A2A00204813E900217F6D /* NinjaQuizSession.swift */; };
+		C5CE122C204D504F004D0DCF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE122B204D504F004D0DCF /* HomeViewController.swift */; };
+		C5CE122E204D5BA0004D0DCF /* QuizSessionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE122D204D5BA0004D0DCF /* QuizSessionFactory.swift */; };
 		CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCECE1C74A5C800133338 /* AppDelegate.swift */; };
-		CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCED01C74A5C800133338 /* ViewController.swift */; };
+		CF4FCED11C74A5C800133338 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCED01C74A5C800133338 /* GameViewController.swift */; };
 		CF4FCED41C74A5C800133338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4FCED21C74A5C800133338 /* Main.storyboard */; };
 		CF4FCED61C74A5C800133338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4FCED51C74A5C800133338 /* Images.xcassets */; };
 		CF4FCED91C74A5C800133338 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4FCED71C74A5C800133338 /* LaunchScreen.xib */; };
@@ -42,10 +44,12 @@
 		C52FA11D20441BAB004F00A0 /* JourneymanQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneymanQuizSession.swift; sourceTree = "<group>"; };
 		C52FA11F20441EC9004F00A0 /* WarriorQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorQuizSession.swift; sourceTree = "<group>"; };
 		C54A2A00204813E900217F6D /* NinjaQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinjaQuizSession.swift; sourceTree = "<group>"; };
+		C5CE122B204D504F004D0DCF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5CE122D204D5BA0004D0DCF /* QuizSessionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionFactory.swift; sourceTree = "<group>"; };
 		CF4FCEC91C74A5C800133338 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4FCECD1C74A5C800133338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4FCECE1C74A5C800133338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF4FCED01C74A5C800133338 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF4FCED01C74A5C800133338 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CF4FCED31C74A5C800133338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF4FCED51C74A5C800133338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF4FCED81C74A5C800133338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,9 +119,11 @@
 			children = (
 				C52FA11C2044181D004F00A0 /* QuestionRepository */,
 				C52FA11B20441806004F00A0 /* QuizSession */,
+				C5CE122D204D5BA0004D0DCF /* QuizSessionFactory.swift */,
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
-				CF4FCED01C74A5C800133338 /* ViewController.swift */,
+				C5CE122B204D504F004D0DCF /* HomeViewController.swift */,
+				CF4FCED01C74A5C800133338 /* GameViewController.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
 				CF4FCED21C74A5C800133338 /* Main.storyboard */,
@@ -240,7 +246,7 @@
 				CF4FCEF11C74A6B200133338 /* Question.swift in Sources */,
 				A96EB14D1E67014600F48F53 /* QuizSession.swift in Sources */,
 				A9FBA19C1E811A6D007DCBF2 /* RemoteQuestionRepository.swift in Sources */,
-				CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */,
+				CF4FCED11C74A5C800133338 /* GameViewController.swift in Sources */,
 				C52FA12020441EC9004F00A0 /* WarriorQuizSession.swift in Sources */,
 				C52FA11E20441BAB004F00A0 /* JourneymanQuizSession.swift in Sources */,
 				A9FBA1991E81191C007DCBF2 /* RookieQuizSession.swift in Sources */,
@@ -248,6 +254,8 @@
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
 				C54A2A01204813E900217F6D /* NinjaQuizSession.swift in Sources */,
 				A9FBA19A1E81191C007DCBF2 /* StaticQuestionRepository.swift in Sources */,
+				C5CE122C204D504F004D0DCF /* HomeViewController.swift in Sources */,
+				C5CE122E204D5BA0004D0DCF /* QuizSessionFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
