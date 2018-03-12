@@ -12,18 +12,20 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     @IBOutlet var startGameButton: UIButton!
     @IBOutlet var gameTypePicker: UIPickerView!
+    @IBOutlet weak var gameOverLabel: UILabel!
     
     private var pickerData: [String] = [String]()
-    private var selectedGameMode: String? = nil
+    private var selectedGameMode: String!
     
-    public var isGameOver: Bool = false
-    public var score: Int = 0
+    public var isGameOver: Bool!
+    public var score: Int!
+    public var questionCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        self.isGameOver = false
         // Connect data:
         gameTypePicker?.delegate = self
         gameTypePicker?.dataSource = self
@@ -35,6 +37,14 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+        if (self.isGameOver) {
+            self.gameOverLabel.isHidden = false
+            self.gameOverLabel.text = "GAME OVER \n you scored \(self.score) / \(self.questionCount)"
+        }
     }
     
     @IBAction func StartGameClick(_ sender: Any) {
@@ -49,8 +59,9 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         catch {
             print("FATAL ERROR")
         }
-        // startGameButton.setTitle(selectedGameMode!, for: UIControlState())
         
+        self.isGameOver = false
+        gameVC.delegate = self
         present(gameVC, animated: true, completion: nil)
     }
     
@@ -66,8 +77,11 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        selectedGameMode = pickerData[row]
-        
         return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedGameMode = pickerData[row]
+        print(self.selectedGameMode)
     }
 }

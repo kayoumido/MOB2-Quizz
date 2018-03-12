@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     var timer = Timer()
     var time = 0
     var questionTime = 0
+    public var delegate: HomeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,15 +129,11 @@ class GameViewController: UIViewController {
         self.timer.invalidate()
         
         // No more questions! This is the end
-        answerButton1.isHidden = true
-        answerButton2.isHidden = true
-        answerButton3.isHidden = true
-        hintLabel.isHidden = true
-        hintButton.isHidden = true
-        self.newGameButton.isHidden = false
-        self.timerLabel.isHidden = true
+        delegate!.score = session.score
+        delegate!.questionCount = session.questionsCount
+        delegate!.isGameOver = true
         
-        questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
